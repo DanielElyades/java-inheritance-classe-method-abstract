@@ -30,17 +30,20 @@ public class Program {
 			System.out.println("Anual income: ");
 			Double anualIncome = sc.nextDouble();
 			
+			
 			if (type == 'i') {
 				System.out.println("Health expendentures: ");
 				Double healthExpenditures = sc.nextDouble();
-				Individual x = new Individual(name, anualIncome, healthExpenditures);
-				list.add(x);
+				list.add(new Individual(name, anualIncome, healthExpenditures));
 			}
 			else {
 				System.out.println("Number of employees:");
 				Integer numberOfEmployees = sc.nextInt();
 				list.add(new Company(name, anualIncome, numberOfEmployees));
 				
+				}
+				
+				}
 				System.out.println();
 				System.out.println("TAXES PAID:");
 				double sum = 0.0;
@@ -54,12 +57,14 @@ public class Program {
 					sum += taxPayer.tax();
 					
 				}
+				
+				
 				System.out.println("TOTAL TAXES: $ " + String.format("%.2f", sum));
 				
 				sc.close();
 			}
-		}
+		
 
-	}
+	
 
 }
